@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>همراه درس | صفحه کار</title>
+    <link rel="icon" type="image/x-icon" href="images/briefcase-solid.svg">
+    <link rel="stylesheet" href="functions.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://kit.fontawesome.com/dc34aa9df5.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Libre+Baskerville:wght@700&family=Press+Start+2P&family=Roboto&family=Vazirmatn&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+
+    <div class="topBar">
+        <div class="TopBarSet"><i class="fa-solid fa-gear"></i></div>
+        <div class="TopBarHelp"><i class="fa-solid fa-question"></i></div>
+        <img src="images/logo w circle.png" alt="همراه درس" class="Logoimg">
+        <div class="logo">همراه <span class="dars-word">درس</span></div>
+    </div>
+
+    <div class="NavBarText">نمونه</div>
+    <div class="NavBar">
+      <div class="gadget-item" data-gadget="note">
+            <div class="note">
+                <button  class="btn"><i class='bx bx-note'></i></button>
+        </div>
+        <div class="notetext">نوت</div>
+      </div>
+      <div class="gadget-item" data-gadget="document">
+        <div class="longfile">
+          <button type="button" class="DoccBtn" value="toggle" onclick="toggleI()"><i class="fa-regular fa-file-lines" id="doctext"></i></button>
+            </div>
+        <div class="longfiletext">متن</div>
+        </div>
+      <div class="gadget-item" data-gadget="todo">
+        <div class="todo">
+          <button type="button" class="todoBtn" value="toggle" id="toggleBtn" onclick="toggleKM()"><i class="fa-solid fa-list-check fa-xl"></i></button>
+        </div>
+        <div class="todotext">انجام کار</div>
+        </div>
+      <div class="gadget-item" data-gadget="climate">
+        <div class="climate">
+          <button type="button" class="ClimateBtn" value="toggle" onclick="toggleM()"><i class="fa-solid fa-cloud-bolt"></i></button>
+        </div>
+        <div class="climatetext">آب و هوا</div>
+        </div>
+      <div class="gadget-item" data-gadget="calculator">
+        <div class="calculatorrrr">
+          <button type="button" class="CalcuBtn" value="toggle" onclick="toggleL()"><i class='bx bxs-calculator'></i></button>
+        </div>
+        <div class="calculatoretext">ماشین حساب</div>
+        </div>
+      <div class="gadget-item" data-gadget="clock">
+        <div class="watch">
+          <button type="button" class="WatchBtn" value="toggle" onclick="toggleP()"><i class="fa-solid fa-clock fa-xl"></i></button>
+        </div>
+        <div class="watchtext">ساعت</div>
+        </div>
+      <div class="gadget-item" data-gadget="stopwatch">
+        <div class="stopwatch">
+          <button type="button" class="StopWatchBtn" value="toggle" onclick="toggleO()"><i class="fa-solid fa-stopwatch fa-xl"></i></button>
+        </div>
+        <div class="stopwatchtext">کرنومتر</div>
+        </div>
+      <div class="gadget-item" data-gadget="paint">
+        <a href="PaintApp.html" target="_blank">
+          <div class="PaintApp"><i class="fa-solid fa-palette"></i></div>
+        </a>
+        <div class="PaintAppText">نقاشی</div>
+      </div>
+      <button class="gadget-add" type="button" aria-label="افزودن ابزار">
+        <i class="fa-solid fa-plus" aria-hidden="true"></i>
+        <span>افزودن</span>
+      </button>
+    </div>
+
+    <div class="gadget-picker" hidden aria-label="ابزارهای حذف شده"></div>
+
+    <script>
+      const gadgetDock = document.querySelector(".NavBar");
+      const gadgetPicker = document.querySelector(".gadget-picker");
+      const gadgetAddButton = document.querySelector(".gadget-add");
+      const gadgetItems = [...document.querySelectorAll(".gadget-item")];
+      const gadgetLabels = {
+        note: "نوت",
+        document: "متن",
+        todo: "انجام کار",
+        climate: "آب و هوا",
+        calculator: "ماشین حساب",
+        clock: "ساعت",
+        stopwatch: "کرنومتر",
+        paint: "نقاشی"
+      };
+      const hiddenGadgets = new Set(JSON.parse(localStorage.getItem("hidden-gadgets") || "[]"));
+      const savedGadgetOrder = JSON.parse(localStorage.getItem("gadget-order") || "[]");
+
+      savedGadgetOrder.forEach((gadgetName) => {
+        const item = gadgetItems.find((candidate) => candidate.dataset.gadget === gadgetName);
+        if (item) {
+          gadgetDock.insertBefore(item, gadgetAddButton);
+        }
+      });
+
+      function saveHiddenGadgets() {
+        localStorage.setItem("hidden-gadgets", JSON.stringify([...hiddenGadgets]));
+      }
+
+      function saveGadgetOrder() {
+        const order = [...gadgetDock.querySelectorAll(".gadget-item")].map((item) => item.dataset.gadget);
+        localStorage.setItem("gadget-order", JSON.stringify(order));
+      }
+
+      function renderGadgetPicker(showPicker = false) {
+        gadgetPicker.innerHTML = "";
+        const removedItems = gadgetItems.filter((item) => hiddenGadgets.has(item.dataset.gadget));
+
+        removedItems.forEach((item) => {
+          const restoreButton = document.createElement("button");
+          const icon = item.querySelector("i").cloneNode(true);
+          restoreButton.type = "button";
+          restoreButton.className = "gadget-restore";
+          restoreButton.append(icon, document.createTextNode(gadgetLabels[item.dataset.gadget]));
+          restoreButton.addEventListener("click", function () {
+            hiddenGadgets.delete(item.dataset.gadget);
+            item.hidden = false;
+            saveHiddenGadgets();
+            renderGadgetPicker(true);
+          });
+          gadgetPicker.appendChild(restoreButton);
+        });
+
+        gadgetPicker.hidden = gadgetPicker.childElementCount === 0 || !showPicker;
+      }
+
+      function removeGadget(item) {
+        hiddenGadgets.add(item.dataset.gadget);
+        item.hidden = true;
+        saveHiddenGadgets();
+        renderGadgetPicker();
+      }
+
+      function moveGadget(item, pointerX) {
+        const visibleItems = [...gadgetDock.querySelectorAll(".gadget-item:not([hidden])")];
+        const target = visibleItems.find((candidate) => {
+          if (candidate === item) {
+            return false;
+          }
+          const bounds = candidate.getBoundingClientRect();
+          return pointerX < bounds.left + bounds.width / 2;
+        });
+
+        if (target) {
+          gadgetDock.insertBefore(item, target);
+        } else {
+          gadgetDock.insertBefore(item, gadgetAddButton);
+        }
+      }
+
+      gadgetItems.forEach((item) => {
+        if (hiddenGadgets.has(item.dataset.gadget)) {
+          item.hidden = true;
+        }
+
+        let holdTimer;
+        let holdTriggered = false;
+        let isDragging = false;
+        let suppressClick = false;
+        let pointerId = null;
+
+        item.addEventListener("pointerdown", function (event) {
+          pointerId = event.pointerId;
+          holdTriggered = false;
+          isDragging = false;
+          holdTimer = setTimeout(function () {
+            holdTriggered = true;
+            item.classList.add("hold-ready");
+          }, 550);
+        });
+
+        item.addEventListener("pointermove", function (event) {
+          if (!holdTriggered || event.pointerId !== pointerId) {
+            return;
+          }
+
+          if (!isDragging) {
+            isDragging = true;
+            item.classList.add("is-dragging");
+            try {
+              item.setPointerCapture(pointerId);
+            } catch (error) {
+            }
+          }
+
+          event.preventDefault();
+          moveGadget(item, event.clientX);
+        });
+
+        item.addEventListener("pointerup", function () {
+          clearTimeout(holdTimer);
+
+          suppressClick = holdTriggered || isDragging;
+
+          if (holdTriggered && !isDragging && window.matchMedia("(max-width: 700px)").matches) {
+            removeGadget(item);
+          } else if (isDragging) {
+            saveGadgetOrder();
+          }
+
+          item.classList.remove("hold-ready", "is-dragging");
+          holdTriggered = false;
+          isDragging = false;
+          pointerId = null;
+        });
+
+        item.addEventListener("pointercancel", function () {
+          clearTimeout(holdTimer);
+          item.classList.remove("hold-ready", "is-dragging");
+          holdTriggered = false;
+          isDragging = false;
+          pointerId = null;
+        });
+
+        item.addEventListener("click", function (event) {
+          if (suppressClick) {
+            event.preventDefault();
+            event.stopPropagation();
+            suppressClick = false;
+          }
+        }, true);
+
+        item.addEventListener("contextmenu", function (event) {
+          event.preventDefault();
+          if (!window.matchMedia("(max-width: 700px)").matches) {
+            removeGadget(item);
+          }
+        });
+      });
+
+      saveGadgetOrder();
+
+      gadgetAddButton.addEventListener("click", function () {
+        const inventoryWasOpen = !gadgetPicker.hidden;
+        renderGadgetPicker(!inventoryWasOpen);
+        if (gadgetPicker.childElementCount > 0) {
+          gadgetPicker.hidden = inventoryWasOpen;
+        }
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!gadgetPicker.contains(event.target) && event.target !== gadgetAddButton && !gadgetAddButton.contains(event.target)) {
+          gadgetPicker.hidden = true;
+        }
+      });
+
+      renderGadgetPicker();
+    </script>
+
+        <script>
+          const sidebarIconItems = document.querySelectorAll(
+            ".note, .longfile, .todo, .climate, .calculatorrrr, .watch, .stopwatch, .PaintApp"
+          );
+
+          sidebarIconItems.forEach((item) => {
+            const icon = item.querySelector("i");
+            let returnTimer;
+
+            item.classList.add("sidebar-icon");
+
+            item.addEventListener("pointerenter", function () {
+              if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                return;
+              }
+
+              clearTimeout(returnTimer);
+              item.classList.remove("is-returning");
+              item.classList.add("is-bouncing");
+            });
+
+            item.addEventListener("pointerleave", function () {
+              item.classList.remove("is-bouncing");
+              item.classList.add("is-returning");
+              icon.style.transform = "translateY(0)";
+
+              clearTimeout(returnTimer);
+              returnTimer = setTimeout(function () {
+                item.classList.remove("is-returning");
+                icon.style.removeProperty("transform");
+              }, 400);
+            });
+          });
+        </script>
+
+    <div class="cont290 workspace-panel" id="CalBtnhhh">
+        <input type="text" class="display" />
+  
+        <div class="buttons">
+          <button class="operator" data-value="AC">AC</button>
+          <button class="operator" data-value="DEL">DEL</button>
+          <button class="operator" data-value="%">%</button>
+          <button class="operator" data-value="/">/</button>
+  
+          <button data-value="7">7</button>
+          <button data-value="8">8</button>
+          <button data-value="9">9</button>
+          <button class="operator" data-value="*">*</button>
+  
+          <button data-value="4">4</button>
+          <button data-value="5">5</button>
+          <button data-value="6">6</button>
+          <button class="operator" data-value="-">-</button>
+  
+          <button data-value="1">1</button>
+          <button data-value="2">2</button>
+          <button data-value="3">3</button>
+          <button class="operator" data-value="+">+</button>
+  
+          <button data-value="0">0</button>
+          <button data-value="00">00</button>
+          <button data-value=".">.</button>
+          <button class="operator" data-value="=">=</button>
+        </div>
+      </div>
+
+    <div class="hero workspace-panel" id="info">
+        <div class="cont3987">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="cont3 workspace-panel" id="todoappdisplaybrrr">
+        <div class="todoapp">
+            <h2>لیست انجام کار<img src="images/icon.png"></h2>
+            <div class="row">
+                <input type="text" id="inputboox" placeholder="متن خود را وارد کنید">
+                <button onclick="addTask24()">اضافه کردن </button>
+            </div>
+            <ul id="listcont22">
+            <!-- <li class="checked">Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li> -->
+        </ul>
+        </div>
+    </div>
+
+    
+
+    <div class="watchstop2 workspace-panel" id="StopWatchBtn">
+        <div class="bababoy"> 
+        <div class="time">
+            00:00:00
+        </div>
+        <div class="controls">
+            <button id="start">شروع</button>
+            <button id="stop">توقف</button>
+            <button id="reset">بازنشانی</button>
+        </div>
+    </div>
+    </div>
+
+    <div class="wrapper workspace-panel" id="climateappdisplay">
+        <header><i class='bx bx-left-arrow-alt'></i>آب و هوا</header>
+        <section class="input-part">
+          <p class="info-txt"></p>
+          <div class="content">
+            <input type="text" spellcheck="true" placeholder="نام یک شهر را وارد کنید(لاتین)" required>
+            <div class="separator"></div>
+            <button>استفاده از موقعیت دستگاه</button>
+          </div>
+        </section>
+        <section class="weather-part">
+          <img src="" alt="Weather Icon" class="Weatherimg">
+          <div class="temp">
+            <span class="numb">_</span>
+            <span class="deg">°</span>C
+          </div>
+          <div class="weather">_ _</div>
+          <div class="location">
+            <i class='bx bx-map'></i>
+            <span>_, _</span>
+          </div>
+          <div class="bottom-details">
+            <div class="column feels">
+              <i class='bx bxs-thermometer'></i>
+              <div class="details">
+                <div class="temp">
+                  <span class="numb-2">_</span>
+                  <span class="deg">°</span>C
+                </div>
+                <p>احساس میشود</p>
+              </div>
+            </div>
+            <div class="column humidity">
+              <i class='bx bxs-droplet-half'></i>
+              <div class="details">
+                <span>_</span>
+                <p>رطوبت</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+    <div class="NoteTab workspace-panel" id="NoteTab">
+        <div class="notes-container">
+            <p contenteditable="true" class="input-box" placeholder="Type something here..">
+              <img src="images/delete.png" alt="delete">
+            </p>
+          </div>
+    </div>
+
+    <div class="documentTab workspace-panel" id="DocumentBtnToggle">
+        <div class="notes__Document">
+            <textarea class="TextDoc"></textarea>
+            </div>
+    </div>
+
+
+  
+    
+
+
+
+    <script>
+        let hrs = document.getElementById("hrs");
+        let min = document.getElementById("min");
+        let sec = document.getElementById("sec");
+
+        setInterval (()=>{
+
+        let currentTime = new Date();
+
+        hrs.innerHTML = (currentTime.getHours() <10?"0":"") + currentTime.getHours();
+        min.innerHTML = (currentTime.getMinutes() <10?"0":"") + currentTime.getMinutes();
+        sec.innerHTML = (currentTime.getSeconds() <10?"0":"") + currentTime.getSeconds();
+    },1000)
+</script>
+
+<script>
+    function toggleP() {
+  var element = document.getElementById("info");
+  if (element.style.display == "block") {
+    element.style.display = "none";
+  } else {
+    element.style.display = "block";
+  }
+}
+</script>
+
+<script>
+    function toggleO() {
+  var element = document.getElementById("StopWatchBtn");
+  if (element.style.display == "block") {
+    element.style.display = "none";
+  } else {
+    element.style.display = "block";
+  }
+}
+</script>
+
+<script>
+    function toggleL() {
+  var element = document.getElementById("CalBtnhhh");
+  if (element.style.display == "block") {
+    element.style.display = "none";
+  } else {
+    element.style.display = "block";
+  }
+}
+</script>
+
+<script>
+    function toggleM() {
+  var element = document.getElementById("climateappdisplay");
+  if (element.style.display == "block") {
+    element.style.display = "none";
+  } else {
+    element.style.display = "block";
+  }
+}
+</script>
+
+<script>
+    function toggleKM() {
+  var element = document.getElementById("todoappdisplaybrrr");
+  if (element.style.display == "none") {
+    element.style.display = "block";
+  } else {
+    element.style.display = "none";
+  }
+}
+</script>
+
+<script>
+    function toggleI() {
+  var element = document.getElementById("DocumentBtnToggle");
+  if (element.style.display == "none") {
+    element.style.display = "block";
+  } else {
+    element.style.display = "none";
+  }
+}
+</script>
+
+  <script>
+    var heroPanel = document.querySelector('.hero');
+    // Removed old dragging script for hero to use the new workspace-panel system
+  </script>
+
+<script>
+        const time_el = document.querySelector('.watchstop2 .time');
+const start_btn = document.getElementById('start');
+const stop_btn = document.getElementById("stop");
+const reset_btn = document.getElementById("reset");
+
+let seconds = 0;
+let interval = null;
+
+// Event listeners
+start_btn.addEventListener('click', start);
+stop_btn.addEventListener("click", stop);
+reset_btn.addEventListener("click", reset);
+
+// Update the timer
+function timer () {
+	seconds++;
+
+	// Format our time
+	let hrs = Math.floor(seconds / 3600);
+	let mins = Math.floor((seconds - (hrs * 3600)) / 60);
+	let secs = seconds % 60;
+
+	if (secs < 10) secs = '0' + secs;
+	if (mins < 10) mins = "0" + mins;
+	if (hrs < 10) hrs = "0" + hrs;
+
+	time_el.innerText = `${hrs}:${mins}:${secs}`;
+}
+
+function start () {
+	if (interval) {
+		return
+	}
+
+	interval = setInterval(timer, 1000);
+}
+
+function stop () {
+	clearInterval(interval);
+	interval = null;
+}
+
+function reset () {
+	stop();
+	seconds = 0;
+	time_el.innerText = '00:00:00';
+}
+</script>
+
+
+<script>
+    const display = document.querySelector(".display");
+const buttons = document.querySelectorAll("button");
+const specialChars = ["%", "*", "/", "-", "+", "="];
+let output = "";
+
+//Define function to calculate based on button clicked.
+const calculate = (btnValue) => {
+display.focus();
+if (btnValue === "=" && output !== "") {
+//If output has '%', replace with '/100' before evaluating.
+output = eval(output.replace("%", "/100"));
+} else if (btnValue === "AC") {
+output = "";
+} else if (btnValue === "DEL") {
+//If DEL button is clicked, remove the last character from the output.
+output = output.toString().slice(0, -1);
+} else {
+//If output is empty and button is specialChars then return
+if (output === "" && specialChars.includes(btnValue)) return;
+output += btnValue;
+}
+display.value = output;
+};
+
+//Add event listener to buttons, call calculate() on click.
+buttons.forEach((button) => {
+//Button click listener calls calculate() with dataset value as argument.
+button.addEventListener("click", (e) => calculate(e.target.dataset.value));
+});
+</script>
+
+<script>
+    const inputboox = document.getElementById("inputboox");
+    const listcont22= document.getElementById("listcont22");
+    
+    function addTask24 (){
+        if(inputboox.value === ''){
+            alert("لطفا یک متن را وارد کنید");
+        }
+        else{
+            let li = document.createElement("li");
+            li.innerHTML = inputboox.value;
+            listcont22.appendChild(li);
+            let span = document.createElement("span");
+            span.innerHTML="\u00d7"
+            li.appendChild(span);
+        }
+        inputboox.value="";
+    }
+    
+    listcont22.addEventListener("click", function(e){
+        if(e.target.tagName === "LI"){
+            e.target.classList.toggle("checked");
+        }
+        else if(e.target.tagName === "SPAN"){
+            e.target.parentElement.remove();
+        }
+    }, false);
+    </script>
+
+    <script>
+        const notesContainer = document.querySelector(".notes-container");
+  const createBtn = document.querySelector(".btn");
+  let notes = document.querySelectorAll(".input-box");
+  
+  function showNotes(){
+      notesContainer.innerHTML = localStorage.getItem("notes");
+  }
+  
+  showNotes();
+  
+  function updateStorage(){
+      localStorage.setItem("notes" , notesContainer.innerHTML);
+  }
+  
+  createBtn.addEventListener("click", ()=>{
+      let inputBox = document.createElement("p");
+      let img = document.createElement("img");
+      inputBox.className = "input-box";
+      inputBox.setAttribute("contenteditable", "true");
+      img.src = "images/delete.png"
+      notesContainer.appendChild(inputBox).appendChild(img);
+  })
+  
+  notesContainer.addEventListener("click", function(e){
+      if (e.target.tagName === "IMG"){
+          e.target.parentElement.remove();
+          updateStorage();
+      }
+      else if (e.target.tagName === "P"){
+          notes = document.querySelectorAll("input-box");
+          notes.forEach(nt => {
+              nt.onkeyup = function(){
+                  updateStorage();
+              }
+          })
+      }
+  })
+  
+  document.addEventListener("keydown", event => {
+      if(event.key === "Enter"){
+          document.execCommand("insertLineBreak");
+          event.preventDefault();
+      }
+  })
+    </script>
+
+
+<script>
+    const wrapper = document.querySelector(".wrapper"),
+inputPart = document.querySelector(".input-part"),
+infoTxt = inputPart.querySelector(".info-txt"),
+inputField = inputPart.querySelector("input"),
+locationBtn = inputPart.querySelector("button"),
+weatherPart = wrapper.querySelector(".weather-part"),
+wIcon = weatherPart.querySelector("img"),
+arrowBack = wrapper.querySelector("header i");
+
+let api;
+
+inputField.addEventListener("keyup", e =>{
+    if(e.key == "Enter" && inputField.value != ""){
+        requestApi(inputField.value);
+    }
+});
+
+locationBtn.addEventListener("click", () =>{
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }else{
+        alert("مرورگر شما این برنامه را پشتیبانی نمیکند");
+    }
+});
+
+function requestApi(city){
+    api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=2579c0dd658a956e4fbede1fc5da6f0b`;
+    fetchData();
+}
+
+function onSuccess(position){
+    const {latitude, longitude} = position.coords;
+    api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=2579c0dd658a956e4fbede1fc5da6f0b`;
+    fetchData();
+}
+
+function onError(error){
+    infoTxt.innerText = error.message;
+    infoTxt.classList.add("ارور");
+}
+
+function fetchData(){
+    infoTxt.innerText = "...در حال جمع آوری اطلاعات"; 
+    infoTxt.classList.add("pending");
+    fetch(api).then(res => res.json()).then(result => weatherDetails(result)).catch(() =>{
+        infoTxt.innerText = "مشکلی پیش آمد";
+        infoTxt.classList.replace("pending", "error");
+    });
+}
+
+function weatherDetails(info){
+    if(info.cod == "404"){
+        infoTxt.classList.replace("pending", "error");
+        infoTxt.innerText = `${inputField.value} یک شهر محسوب نمیشود`;
+    }else{
+        const city = info.name;
+        const country = info.sys.country;
+        const {description, id} = info.weather[0];
+        const {temp, feels_like, humidity} = info.main;
+        
+        if(id == 800){
+            img.src = "images/clear.png";
+        }else if(id >= 200 && id <= 232){
+            wIcon.src = "icons/storm.svg";  
+        }else if(id >= 600 && id <= 622){
+            wIcon.src = "icons/snow.svg";
+        }else if(id >= 701 && id <= 781){
+            wIcon.src = "icons/haze.svg";
+        }else if(id >= 801 && id <= 804){
+            wIcon.src = "icons/cloud.svg";
+        }else if((id >= 500 && id <= 531) || (id >= 300 && id <= 321)){
+            wIcon.src = "icons/rain.svg";
+        }
+        
+        weatherPart.querySelector(".temp .numb").innerText = Math.floor(temp);
+        weatherPart.querySelector(".weather").innerText = description;
+        weatherPart.querySelector(".location span").innerText = `${city}, ${country}`;
+        weatherPart.querySelector(".temp .numb-2").innerText = Math.floor(feels_like);
+        weatherPart.querySelector(".humidity span").innerText = `${humidity}%`;
+        infoTxt.classList.remove("pending", "error");
+        infoTxt.innerText = "";
+        inputField.value = "";
+        wrapper.classList.add("active");
+    }
+}
+
+arrowBack.addEventListener("click", ()=>{
+    wrapper.classList.remove("active");
+});
+</script>
+
+<script>
+    const workspacePanels = [
+    document.querySelector("#CalBtnhhh"),
+    document.querySelector("#todoappdisplaybrrr"),
+    document.querySelector("#StopWatchBtn"),
+    document.querySelector("#climateappdisplay"),
+    document.querySelector("#NoteTab"),
+    document.querySelector("#DocumentBtnToggle"),
+    document.querySelector("#info")
+  ].filter(Boolean);
+
+  function panelStorageKey(panel) {
+    return `workspace-panel-${panel.dataset.workspacePanel}`;
+  }
+
+  function positionPanel(panel) {
+    const stored = JSON.parse(localStorage.getItem(panelStorageKey(panel)) || "null");
+    if (!stored) {
+      return;
+    }
+
+    panel.classList.add("is-positioned");
+    panel.style.left = `${stored.left}px`;
+    panel.style.top = `${stored.top}px`;
+    panel.style.width = `${stored.width}px`;
+    panel.style.height = `${stored.height}px`;
+    panel.style.transform = "none";
+  }
+
+  function savePanel(panel, bounds) {
+    localStorage.setItem(panelStorageKey(panel), JSON.stringify({
+      left: bounds.left,
+      top: bounds.top,
+      width: bounds.width,
+      height: bounds.height
+    }));
+  }
+
+    let topZIndex = 100;
+
+  function makePanelMovable(panel, index) {
+    panel.dataset.workspacePanel = panel.dataset.workspacePanel || `panel-${index}`;
+    positionPanel(panel);
+
+    const resizeHandle = document.createElement("span");
+    resizeHandle.className = "workspace-resize-handle";
+    resizeHandle.setAttribute("aria-label", "تغییر اندازه ابزار");
+    panel.appendChild(resizeHandle);
+
+    let holdTimer;
+    let dragState = null;
+    let resizeState = null;
+
+    function bringToFront() {
+      panel.style.zIndex = ++topZIndex;
+    }
+
+        function convertToFixed() {
+      const bounds = panel.getBoundingClientRect();
+      panel.classList.add("is-positioned");
+      
+      // Calculate current ratio before setting styles
+      const ratio = bounds.width / Math.max(bounds.height, 1);
+      
+      panel.style.left = `${bounds.left}px`;
+      panel.style.top = `${bounds.top}px`;
+      panel.style.width = `${bounds.width}px`;
+      panel.style.height = `${bounds.height}px`;
+      panel.style.transform = "none";
+      bringToFront();
+      return { bounds, ratio };
+    }
+
+    panel.addEventListener("pointerdown", function (event) {
+      bringToFront();
+
+      if (event.target.closest("button, input, textarea, select, a, [contenteditable=\"true\"], .workspace-resize-handle")) {
+        return;
+      }
+
+      clearTimeout(holdTimer);
+      holdTimer = setTimeout(function () {
+        const { bounds } = convertToFixed();
+        dragState = {
+          pointerId: event.pointerId,
+          startX: event.clientX,
+          startY: event.clientY,
+          left: bounds.left,
+          top: bounds.top
+        };
+        panel.classList.add("is-dragging");
+        try {
+          panel.setPointerCapture(event.pointerId);
+        } catch (error) {
+        }
+      }, 200);
+    });
+
+        panel.addEventListener("pointermove", function (event) {
+      if (resizeState && event.pointerId === resizeState.pointerId) {
+        event.preventDefault();
+        const nextWidth = Math.max(200, resizeState.width + (event.clientX - resizeState.startX));
+        const maxWidth = window.innerWidth - panel.getBoundingClientRect().left - 20;
+        const width = Math.min(nextWidth, maxWidth);
+        const height = width / resizeState.ratio;
+        
+        panel.style.width = `${width}px`;
+        panel.style.height = `${height}px`;
+        return;
+      }
+
+      if (!dragState || event.pointerId !== dragState.pointerId) {
+        return;
+      }
+
+      event.preventDefault();
+      panel.style.left = `${dragState.left + event.clientX - dragState.startX}px`;
+      panel.style.top = `${dragState.top + event.clientY - dragState.startY}px`;
+    });
+
+    panel.addEventListener("pointerup", function (event) {
+      clearTimeout(holdTimer);
+      if (dragState && event.pointerId === dragState.pointerId) {
+        savePanel(panel, panel.getBoundingClientRect());
+        panel.classList.remove("is-dragging");
+        dragState = null;
+      }
+    });
+
+    panel.addEventListener("pointercancel", function () {
+      clearTimeout(holdTimer);
+      panel.classList.remove("is-dragging");
+      dragState = null;
+      resizeState = null;
+    });
+
+    resizeHandle.addEventListener("pointerdown", function (event) {
+      if (!window.matchMedia("(min-width: 701px)").matches) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      const { bounds, ratio } = convertToFixed();
+      resizeState = {
+        pointerId: event.pointerId,
+        startX: event.clientX,
+        width: bounds.width,
+        height: bounds.height,
+        ratio: ratio
+      };
+      panel.classList.add("is-dragging");
+      try {
+        panel.setPointerCapture(event.pointerId);
+      } catch (error) {
+      }
+    });
+
+
+        resizeHandle.addEventListener("pointerup", function () {
+          if (resizeState) {
+            savePanel(panel, panel.getBoundingClientRect());
+          }
+          resizeState = null;
+          panel.classList.remove("is-dragging");
+        });
+  }
+
+
+  workspacePanels.forEach(makePanelMovable);
+</script>
+
+
+
+
+</body>
+</html>

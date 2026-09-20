@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 24px;
+    font-family: 'Vazirmatn', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    }
+    :root{
+    --bg-color: #345234;
+    --Text-color: #fff;
+    --Main-color: #06d845;
+    }
+    body{
+    background-color: #fff;
+    }
+    html {
+        scroll-behavior: smooth;
+       }
+    nav .Rectangle{
+    width: 100%;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 10px 10px 10px #f9f9f9;
+    }
+    nav ul{
+    flex: 1;
+    text-align: center;
+    padding-top: 10px;
+    justify-content: center;
+    position: absolute;
+    margin-left: 700px;
+    margin-top: 10px;
+    z-index: 2;
+    }
+    nav ul li {
+    display: inline-block;
+    list-style: none;
+    color: rgb(43, 40, 40);
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.45s ease;
+    }
+    nav ul li a{
+    text-decoration: none;
+    font-size: large;
+    transition: 0.45s ease;
+    }
+    nav ul li:hover{
+    color: #3460f0;
+    transition: 0.45s ease ;
+    }
+    nav ul li a .Home {
+    color: #06d845;
+    }
+
+    .logotext {
+        font-family: 'Lalezar', sans-serif;
+        color: #071d5b;
+        margin-top: -50px;
+        margin-left: 70px;
+    }
+
+    .dars-word {
+        color: #08a89d;
+    }
+
+    .logoimg{
+        width: 60px;
+        height: 50px;
+    }
+
+
+.downloadimg{
+    width: 600px;
+    height: 400px;
+    margin-top: 180px;
+    margin-left:70px ;
+
+}
+
+.Dandrtxt{
+    position: relative;
+    margin-top: -525px;
+    font-size: 36px;
+    margin-left: 890px;
+    z-index: 2;
+}
+
+.downloadcontainer{
+    position: relative;
+    margin-left: 900px;
+    margin-top: 10px;
+    z-index: 1;
+
+}
+.imgiconbrr{
+    width: 600px;
+    height: 400px;
+    margin-top: 40px;
+}
+
+
+
+.dnldtxt2{
+    margin-left: 40px;
+    margin-top: -370px;
+}
+
+.downloadbtn{
+    border: 0;
+    background-color: #3460f0;
+    border-radius: 10px;
+    width: 400px;
+    height: 50px;
+    margin-top: 350px;
+    margin-left: 80px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.45s ease;
+}
+
+.downloadbtn:hover{
+    background-color: #6c8efb;
+    transition: 0.45s ease;
+}
+

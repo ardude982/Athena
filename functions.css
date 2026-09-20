@@ -1,0 +1,1736 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Vazirmatn', sans-serif;
+    }
+ 
+ body{
+    background-image:url(images/Screenshot\ 2023-07-20\ 214415.png);
+}
+
+.NavBar{
+    background-color: rgb(235, 237, 238);
+    box-shadow: 0.25px 0.25px gray;
+    width: 60px;
+    height: 648px;
+    margin-top: 30px;
+}
+
+.topBar{
+    background-color: #fff;
+    width: 1535px;
+    height: 50px;
+    box-shadow: 0.25px 0.25px gray;
+}
+
+.NavBarText{
+    font-size: 40px;
+    text-align: center;
+    margin-top: -55px;
+}
+
+.TopBarSet{
+    padding-top: 12px;
+   margin-left: 1480px;
+   cursor: pointer;  
+}
+
+.TopBarHelp{
+    margin-top: -19px;
+    margin-left: 1450px;
+    cursor: pointer;
+}
+
+.todo{
+    font-size: 1.5em;
+    margin-top: 7px;
+    margin-left: 10px;
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.btn button{
+    border-radius: 0;
+    background: none;
+}
+
+.todoBtn{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.todo:hover{
+    margin-left: 30px;
+    transition: 0.25s ease;
+}
+
+.todotext{
+    text-align: center;
+    font-size: 15px;
+}
+
+.note{
+    position: absolute;
+    font-size: 2em;
+    margin-top: 10px;
+    margin-left: -10px;
+    transition: 0.25s ease;
+    cursor: pointer;
+    color: #000;
+    margin-top: -45px;
+    margin-left: 10px;
+}
+.btn{
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+ button{
+    border: 0;
+    background: none;
+} 
+
+.note:hover{
+    margin-left: 30px;
+    transition: 0.25s ease;
+}
+
+.notetext{
+    text-align: center;
+    margin-top: -40px;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+
+.longfile{
+    font-size: 1.5em;
+    margin-top: 6px;
+    margin-left: 10px;
+    transition: 0.25s ease;
+    cursor: pointer;
+    margin-top: 15px
+}
+
+.DoccBtn{
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.longfile:hover{
+    margin-left: 30px;
+    transition: 0.25s ease;
+}
+
+.longfiletext{
+    text-align: center;
+    font-size: 20px;
+}
+
+.climate{
+    font-size: 2em;
+    margin-top: 5px;
+    margin-left: 10px;
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.ClimateBtn{
+    width: 40px;
+    height: 40px;
+    font-size: 36px;
+    cursor: pointer;
+    margin-top: 0px;
+}
+
+
+.climate:hover{
+    margin-left: 30px;
+    transition: 0.25s ease;
+}
+
+.climatetext{
+    text-align: center;
+    font-size: 15px;
+    
+}
+
+.calculatorrrr{
+    font-size: 1.5em;
+    margin-top: 5px;
+    margin-left: 10px;
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.CalcuBtn{
+    width: 40px;
+    height: 40px;
+    font-size: 36px;
+    cursor: pointer;
+    margin-top: 1px
+}
+
+
+.calculatorrrr:hover{
+    margin-left: 30px;
+    transition: 0.25s ease;
+}
+
+.calculatoretext{
+    text-align: center;
+    font-size: 15px;
+}
+
+.watch{
+    font-size: 1.5em;
+    margin-top: 5px;
+    margin-left: 10px;
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.WatchBtn{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.watch:hover{
+    margin-left: 30px;
+    transition: 0.25s ease;
+}
+
+.watchtext{
+    text-align: center;
+    font-size: 20px;
+}
+
+.stopwatch{
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-left: 15px;
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.StopWatchBtn{
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.stopwatch:hover{
+    margin-left: 30px;
+    transition: 0.25s ease;
+}
+
+.stopwatchtext{
+    text-align: center;
+    font-size: 20px;
+}
+
+.PaintApp{
+    font-size: 1.5em;
+    margin-top: 15px;
+    margin-left: 15px;
+    transition: 0.25s ease;
+    cursor: pointer;
+    font-size: 30px;
+    color: #000;
+}
+
+.PaintApp:hover{
+    margin-left: 30px;
+    transition: 0.25s ease;
+}
+
+.PaintAppText{
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.sidebar-icon i {
+  display: inline-block;
+  transform: translateY(0);
+  transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sidebar-icon.is-bouncing i {
+  animation: sidebar-icon-bounce 560ms ease-in-out infinite;
+}
+
+.sidebar-icon.is-returning i {
+  transform: translateY(0);
+}
+
+@keyframes sidebar-icon-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-icon i {
+    animation: none !important;
+    transition: none;
+  }
+}
+
+
+
+img {
+    position: absolute;
+    margin-top: -45px;
+    width: 60px;
+    height: 50px;
+}
+
+.logo{
+    position: absolute;
+  font-family: 'Lalezar', sans-serif;
+  color: #071d5b;
+    font-size: 30px;
+    margin-top: -45px;
+    margin-left: 70px;
+}
+
+.dars-word {
+  color: #08a89d;
+}
+
+
+
+
+
+/* Clock CSSS */
+
+.hero{
+    display: none;
+    color: #fff;
+    margin-top: -605px;
+    margin-left: 365px;
+    position: absolute;
+    z-index: 10;
+}
+
+.cont3987{
+    width: 600px;
+    height: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.clock{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background:var(--darkdark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(40px);
+}
+
+.clock span{
+    font-size: 80px;
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+
+.clock span::after{
+    font-size: 20px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#hrs::after{
+    content: 'ساعت';
+}
+#min::after{
+    content: 'دقیقه';
+}
+#sec::after{
+    content: 'ثانیه';
+}
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+
+  }
+
+  .cont{
+    position: relative;
+    color: #fff;
+    margin-top: 10px;
+}
+
+
+.cont button {
+    display: flex;
+    top: 0;
+    position: inherit;
+    align-items: center;
+    background: black;
+    color: #fff;
+    font-size: 10px;
+    outline: 0;
+    border: 0;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* WhatchStopCSS */
+
+:root {
+	--primary: #DC143C;
+	--dark: #1F2937;
+	--darkdark: #111827;
+	--light: #F3F4F6;
+}
+
+.watchstop2 {
+    position: absolute;
+    margin-top: -475px;
+    margin-left: 666px;
+	text-align: center;
+	background-color: var(--darkdark);
+	width: 100%;
+	max-width: 360px;
+    height: 180px;
+	padding: 1rem 2rem;
+	border-radius: 1rem;
+    color: white;
+    display: none;
+}
+
+.watchstop2 .time {
+	font-size: 5rem;
+	font-weight: 300;
+	margin-bottom: 1rem;
+    margin-top: -10px;
+}
+
+.controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    margin-top: -30px;
+}
+
+.controls button {
+	appearance: none;
+	background: none;
+	outline: none;
+	border: none;
+	cursor: pointer;
+    width: 200px;
+    height: 50px;
+	margin: 0 0.5rem;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+
+	color: #FFF;
+	background-color: var(--primary);
+
+	transition: 0.4s;
+	user-select: none;
+}
+
+.controls button:hover {
+	opacity: 0.7;
+}
+
+.controls button:active {
+	background-color: var(--dark);
+}
+
+.StopWatchBtn {
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    position: inherit;
+    background-color: transparent; 
+    border: none;
+    font-size: 16px;
+    outline: 0;
+    border: 0;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Calculatore Css */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+.cont290 {
+    display: none;
+  position: absolute;
+  max-width: 300px;
+  width: 250px;
+  border-radius: 12px;
+  padding: 10px 20px 20px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  margin-top: -693px;
+  margin-left: 1265px;
+}
+.display {
+  height: 80px;
+  width: 100%;
+  outline: none;
+  border: none;
+  text-align: right;
+  margin-bottom: 10px;
+  font-size: 25px;
+  color: #000e1a;
+  pointer-events: none;
+}
+.buttons {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.buttons button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #eee;
+}
+.buttons button:active {
+  transform: scale(0.99);
+}
+.operator {
+  color: #2f9fff;
+}
+
+
+/* TodoApp Css */
+
+.todoapp{
+    position: absolute;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    margin-top: -290px;
+    z-index: 9;
+}
+
+
+.todoapp h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todoapp h2 img{
+    width: 50px;
+    height: 50px;
+    margin-left: 150px;
+    margin-top: -20px;
+}
+
+.row{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.row input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding:10px;
+    font-weight: 14px;
+}
+
+.row button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    height: 50px;
+    width: 180px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+}
+
+ul li span:hover{
+    background: #edeef0;
+    border-radius:50% ;   
+}
+
+.cont3{
+    position: relative;
+    margin-top: -220px;
+    margin-left: 62px;
+    width: 500px;
+    border-radius: 12px;
+    /* display: none; */
+}
+
+/* Note App */
+.notes-container{
+    position: relative;
+    border-radius: 5px;
+    margin-top: -530px;
+    margin-left: 565px;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    min-height: 150px;
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    margin: 20px 0;
+    outline: none;
+    border-radius: 5px;
+
+}
+
+.input-box img{
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+
+
+/* document CSS */
+
+.notes__Document{
+    position: absolute;
+    border-radius: 10px;
+    width: 505px;
+    height: 300px;
+    margin-top: -1px;
+    margin-left: 545px;
+  }
+  
+  
+   .TextDoc {
+    resize: none;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 240px;
+    border-radius: 10px;
+    width: 500px;
+    height: 220px;
+    margin-left: 20px;
+    border: 0px solid; 
+    
+  }
+
+  /* Custom Scrollbar */
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track{
+    background: #ebedee ;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: var(--dark);
+    border-radius: 15px;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+  ::selection{
+    color: #fff;
+    background: #43AFFC;
+  }
+  .Weatherimg{
+    display: none;
+  }
+  .wrapper{
+    position: absolute;
+    width: 400px;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+    margin-left: 1120px;
+    margin-top: -50px;
+    display: none;
+  }
+  .wrapper header{
+    display: flex;
+    font-size: 21px;
+    font-weight: 500;
+    color: #43AFFC;
+    padding: 16px 15px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+  }
+  header i{
+    font-size: 0em;
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  .wrapper.active header i{
+    margin-left: 5px;
+    font-size: 30px;
+  }
+  .wrapper .input-part{
+    margin: 20px 25px 30px;
+  }
+  .wrapper.active .input-part{
+    display: none;
+  }
+  .input-part .info-txt{
+    display: none;
+    font-size: 17px;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+  }
+  .input-part .info-txt.error{
+    color: #721c24;
+    display: block;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+  }
+  .input-part .info-txt.pending{
+    color: #0c5460;
+    display: block;
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+  }
+  .input-part :where(input, button){
+    width: 100%;
+    height: 55px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-radius: 7px;
+  }
+  .input-part input{
+    text-align: center;
+    padding: 0 15px;
+    border: 1px solid #ccc;
+  }
+  .input-part input:is(:focus, :valid){
+    border: 2px solid #43AFFC;
+  }
+  .input-part input::placeholder{
+    color: #bfbfbf;
+  }
+  .input-part .separator{
+    height: 1px;
+    width: 100%;
+    margin: 25px 0;
+    background: #ccc;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .separator::before{
+    content: "or";
+    color: #b3b3b3;
+    font-size: 19px;
+    padding: 0 15px;
+    background: #fff;
+  }
+  .input-part button{
+    color: #fff;
+    cursor: pointer;
+    background: #43AFFC;
+    transition: 0.3s ease;
+  }
+  .input-part button:hover{
+    background: #1d9ffc;
+  }
+  
+  .wrapper .weather-part{
+    display: none;
+    margin: 30px 0 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .wrapper.active .weather-part{
+    display: flex;
+  }
+  .weather-part img{
+    max-width: 125px;
+  }
+  .weather-part .temp{
+    display: flex;
+    font-weight: 500;
+    font-size: 72px;
+  }
+  .weather-part .temp .numb{
+    font-weight: 600;
+  }
+  .weather-part .temp .deg{
+    font-size: 40px;
+    display: block;
+    margin: 10px 5px 0 0;
+  }
+  .weather-part .weather{
+    font-size: 21px;
+    text-align: center;
+    margin: -5px 20px 15px;
+  }
+  .weather-part .location{
+    display: flex;
+    font-size: 19px;
+    padding: 0 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    align-items: flex-start;
+  }
+  .location i{
+    font-size: 22px;
+    margin: 4px 5px 0 0;
+  }
+  .weather-part .bottom-details{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+  }
+  .bottom-details .column{
+    display: flex;
+    width: 100%;
+    padding: 15px 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .column i{
+    color: #5DBBFF;
+    font-size: 40px;
+  }
+  .column.humidity{
+    border-left: 1px solid #ccc;
+  }
+  .column .details{
+    margin-left: 3px;
+  }
+  .details .temp, .humidity span{
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: -3px;
+  }
+  .details .temp .deg{
+    margin: 0;
+    font-size: 17px;
+    padding: 0 2px 0 1px;
+  }
+  .column .details p{
+    font-size: 14px;
+    margin-top: -6px;
+  }
+  .humidity i{
+    font-size: 37px;
+  }
+
+  @media (max-width: 1100px) {
+    body {
+      min-width: 0;
+      overflow-x: hidden;
+    }
+
+    .topBar {
+      position: relative;
+      width: 100%;
+      height: 54px;
+    }
+
+    .topBar .Logoimg {
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      right: auto;
+      width: 38px;
+      height: 38px;
+      margin: 0;
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 62px;
+      right: auto;
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .TopBarSet,
+    .TopBarHelp {
+      position: absolute;
+      top: 16px;
+      margin: 0;
+    }
+
+    .TopBarSet {
+      right: 16px;
+      padding: 0;
+    }
+
+    .TopBarHelp {
+      right: 48px;
+      margin-top: 0;
+    }
+
+    .NavBarText {
+      display: none;
+    }
+
+    .NavBar {
+      position: fixed;
+      top: 54px;
+      left: 0;
+      z-index: 20;
+      width: 76px;
+      height: calc(100vh - 54px);
+      margin: 0;
+      overflow-y: auto;
+    }
+
+    .cont290,
+    #todoappdisplaybrrr,
+    #StopWatchBtn,
+    #climateappdisplay,
+    #DocumentBtnToggle,
+    .NoteTab {
+      position: fixed;
+      top: 70px;
+      right: 16px;
+      left: 92px;
+      z-index: 15;
+      width: auto;
+      max-width: none;
+      max-height: calc(100vh - 86px);
+      margin: 0;
+      overflow: auto;
+    }
+
+    .cont290 {
+      padding: 10px 16px 16px;
+    }
+
+    .cont3 .todoapp {
+      position: static;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 24px 20px 40px;
+    }
+
+    .todoapp h2 img {
+      position: static;
+      width: 42px;
+      height: 42px;
+      margin: 0 0 0 12px;
+    }
+
+    .notes-container {
+      position: static;
+      width: 100%;
+      margin: 0;
+    }
+
+    .input-box {
+      max-width: none;
+      margin: 0;
+    }
+
+    .notes__Document {
+      position: static;
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    .TextDoc {
+      position: static;
+      width: 100%;
+      height: min(60vh, 360px);
+      margin: 0;
+    }
+
+    .wrapper {
+      width: auto;
+      max-height: calc(100vh - 86px);
+      margin: 0;
+      overflow: auto;
+    }
+
+    .watchstop2,
+    .hero {
+      position: fixed;
+      top: 50%;
+      left: calc(50% + 38px);
+      right: auto;
+      z-index: 15;
+      width: min(540px, calc(100vw - 108px));
+      margin: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    .watchstop2 {
+      height: auto;
+      min-height: 180px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .topBar .Logoimg {
+      left: 12px;
+      right: auto;
+    }
+
+    .logo {
+      left: 54px;
+      right: auto;
+      font-size: 19px;
+    }
+
+    .TopBarSet {
+      right: 16px;
+    }
+
+    .TopBarHelp {
+      right: 48px;
+    }
+
+    .NavBar {
+      top: 54px;
+      width: 100%;
+      height: auto;
+      max-height: 108px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 4px;
+      padding: 6px 4px;
+      overflow-y: hidden;
+      overflow-x: auto;
+    }
+
+    .NavBar > .note,
+    .NavBar > .longfile,
+    .NavBar > .todo,
+    .NavBar > .climate,
+    .NavBar > .calculatorrrr,
+    .NavBar > .watch,
+    .NavBar > .stopwatch,
+    .NavBar > a .PaintApp {
+      position: static;
+      margin: 0;
+      text-align: center;
+    }
+
+    .NavBar > .notetext,
+    .NavBar > .longfiletext,
+    .NavBar > .todotext,
+    .NavBar > .climatetext,
+    .NavBar > .calculatoretext,
+    .NavBar > .watchtext,
+    .NavBar > .stopwatchtext,
+    .NavBar > .PaintAppText {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .NavBar .sidebar-icon i {
+      font-size: 25px;
+    }
+
+    .NavBar .btn,
+    .NavBar .DoccBtn,
+    .NavBar .todoBtn,
+    .NavBar .ClimateBtn,
+    .NavBar .CalcuBtn,
+    .NavBar .WatchBtn,
+    .NavBar .StopWatchBtn {
+      width: 34px;
+      height: 34px;
+      margin: 0;
+      font-size: 25px;
+    }
+
+    .cont290,
+    #todoappdisplaybrrr,
+    #StopWatchBtn,
+    #climateappdisplay,
+    #DocumentBtnToggle,
+    .NoteTab {
+      top: 174px;
+      right: 10px;
+      left: 10px;
+      max-height: calc(100vh - 184px);
+    }
+
+    .watchstop2,
+    .hero {
+      top: 50%;
+      left: 50%;
+      width: calc(100vw - 20px);
+    }
+
+    .watchstop2 .time {
+      font-size: clamp(2.4rem, 13vw, 5rem);
+    }
+
+    .controls button {
+      width: auto;
+      flex: 1;
+      margin: 0 3px;
+      padding: 0.5rem;
+    }
+
+    .wrapper {
+      top: 174px;
+      right: 10px;
+      left: 10px;
+      width: auto;
+      max-height: calc(100vh - 184px);
+    }
+
+    .row {
+      padding-left: 12px;
+    }
+
+    .row button {
+      width: 130px;
+      padding: 12px;
+    }
+  }
+
+  .NavBar > .note,
+  .NavBar > .longfile,
+  .NavBar > .todo,
+  .NavBar > .climate,
+  .NavBar > .calculatorrrr,
+  .NavBar > .watch,
+  .NavBar > .stopwatch,
+  .NavBar > a .PaintApp {
+    transition: none;
+  }
+
+  .NavBar > .note {
+    position: static;
+    margin: 6px 10px 0;
+  }
+
+  .NavBar > .note:hover,
+  .NavBar > .longfile:hover,
+  .NavBar > .todo:hover,
+  .NavBar > .climate:hover,
+  .NavBar > .calculatorrrr:hover,
+  .NavBar > .watch:hover,
+  .NavBar > .stopwatch:hover,
+  .NavBar > a .PaintApp:hover {
+    margin-left: 10px;
+    transition: none;
+  }
+
+  .NavBar .sidebar-icon > button,
+  .NavBar > a .PaintApp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+
+  .NavBar .sidebar-icon i,
+  .NavBar > a .PaintApp i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    line-height: 1;
+    font-size: 28px;
+  }
+
+  .NavBar > .notetext,
+  .NavBar > .longfiletext,
+  .NavBar > .todotext,
+  .NavBar > .climatetext,
+  .NavBar > .calculatoretext,
+  .NavBar > .watchtext,
+  .NavBar > .stopwatchtext,
+  .NavBar > .PaintAppText {
+    margin-top: 2px;
+    font-size: 15px;
+    line-height: 1.25;
+  }
+
+  @media (max-width: 700px) {
+    .NavBar > .note:hover,
+    .NavBar > .longfile:hover,
+    .NavBar > .todo:hover,
+    .NavBar > .climate:hover,
+    .NavBar > .calculatorrrr:hover,
+    .NavBar > .watch:hover,
+    .NavBar > .stopwatch:hover,
+    .NavBar > a .PaintApp:hover {
+      margin-left: 0;
+    }
+  }
+
+  .NavBar .note {
+    position: static;
+    margin: 6px 10px 0;
+  }
+
+  .NavBar .note:hover {
+    margin-left: 10px;
+  }
+
+  @media (min-width: 701px) {
+    .topBar {
+      position: relative;
+      width: 100%;
+    }
+
+    .topBar .Logoimg {
+      position: absolute;
+      top: 0;
+      left: 12px;
+      right: auto;
+      width: 60px;
+      height: 50px;
+      margin: 0;
+    }
+
+    .logo {
+      position: absolute;
+      top: 8px;
+      left: 82px;
+      right: auto;
+      margin: 0;
+    }
+
+    .TopBarSet,
+    .TopBarHelp {
+      position: absolute;
+      top: 12px;
+      margin: 0;
+    }
+
+    .TopBarSet {
+      right: 16px;
+      padding: 0;
+    }
+
+    .TopBarHelp {
+      right: 48px;
+    }
+  }
+
+  .NavBarText {
+    display: none;
+  }
+
+  .NavBar {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+    height: 86px;
+    margin: 0;
+    padding: 8px 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    touch-action: pan-x;
+    scrollbar-width: thin;
+    scrollbar-color: #6b7280 #ebedee;
+  }
+
+  .NavBar::-webkit-scrollbar {
+    height: 7px;
+  }
+
+  .NavBar::-webkit-scrollbar-track {
+    background: #ebedee;
+  }
+
+  .NavBar::-webkit-scrollbar-thumb {
+    background: #6b7280;
+    border-radius: 8px;
+  }
+
+  .gadget-item {
+    display: flex;
+    flex: 0 0 78px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-width: 78px;
+    padding: 2px 4px;
+    border-radius: 8px;
+    scroll-snap-align: start;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+  }
+
+  .gadget-item[hidden] {
+    display: none !important;
+  }
+
+  .gadget-item.hold-ready {
+    outline: 2px dashed rgba(52, 96, 240, 0.45);
+  }
+
+  .gadget-item.is-dragging {
+    opacity: 0.45;
+    cursor: grabbing;
+    transform: scale(1.04);
+    transition: opacity 160ms ease, transform 160ms ease;
+  }
+
+  .NavBar > .gadget-item {
+    margin: 0;
+  }
+
+  .NavBar > .gadget-item + .gadget-item,
+  .NavBar > .gadget-add {
+    margin-left: 0;
+  }
+
+  .gadget-item > .note,
+  .gadget-item > .longfile,
+  .gadget-item > .todo,
+  .gadget-item > .climate,
+  .gadget-item > .calculatorrrr,
+  .gadget-item > .watch,
+  .gadget-item > .stopwatch,
+  .gadget-item > a .PaintApp {
+    position: static;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: none;
+  }
+
+  .gadget-item > .note:hover,
+  .gadget-item > .longfile:hover,
+  .gadget-item > .todo:hover,
+  .gadget-item > .climate:hover,
+  .gadget-item > .calculatorrrr:hover,
+  .gadget-item > .watch:hover,
+  .gadget-item > .stopwatch:hover,
+  .gadget-item > a .PaintApp:hover {
+    margin: 0;
+  }
+
+  .gadget-item[data-gadget="stopwatch"] > .stopwatch,
+  .gadget-item[data-gadget="stopwatch"] > .stopwatch:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .gadget-item[data-gadget="stopwatch"] .StopWatchBtn {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+  }
+
+  .gadget-item button,
+  .gadget-item > a .PaintApp {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gadget-item .sidebar-icon i,
+  .gadget-item > a .PaintApp i {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+  }
+
+  .gadget-item > .notetext,
+  .gadget-item > .longfiletext,
+  .gadget-item > .todotext,
+  .gadget-item > .climatetext,
+  .gadget-item > .calculatoretext,
+  .gadget-item > .watchtext,
+  .gadget-item > .stopwatchtext,
+  .gadget-item > .PaintAppText {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .gadget-add {
+    display: flex;
+    flex: 0 0 78px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-width: 78px;
+    color: #3460f0;
+    cursor: pointer;
+    scroll-snap-align: start;
+  }
+
+  .gadget-add i {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #3460f0;
+    border-radius: 50%;
+    font-size: 22px;
+  }
+
+  .gadget-add span {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .gadget-picker {
+    position: fixed;
+    top: 104px;
+    right: 14px;
+    z-index: 30;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: min(320px, calc(100vw - 28px));
+    padding: 12px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .gadget-picker[hidden] {
+    display: none;
+  }
+
+  .gadget-picker button {
+    flex: 1 1 120px;
+    min-height: 38px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: #ebedee;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .gadget-picker .gadget-restore {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .gadget-picker .gadget-restore i {
+    font-size: 18px;
+  }
+
+
+
+
+  .workspace-panel {
+    touch-action: none;
+    user-select: none;
+  }
+
+    .workspace-panel.is-positioned {
+    position: fixed !important;
+    margin: 0 !important;
+    transform: none !important;
+    /* We don't force display: block here because some gadgets might be hidden by toggle functions */
+  }
+
+    .workspace-panel.is-positioned > div, 
+  .workspace-panel.is-positioned > section,
+  .workspace-panel.is-positioned > .todoapp,
+  .workspace-panel.is-positioned > .notes-container {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    transform: none !important;
+    overflow: auto;
+  }
+
+    .workspace-panel.is-positioned .clock {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      height: 100% !important;
+      background: var(--darkdark) !important;
+      border-radius: 10px !important;
+    }
+
+
+  .workspace-panel.is-positioned .clock span {
+    font-size: min(12cqw, 80px);
+    width: auto;
+    padding: 0 0.1em;
+  }
+  
+  .workspace-panel.is-positioned .cont3987 {
+    width: 100% !important;
+    height: 100% !important;
+    container-type: size;
+  }
+
+  /* Font scaling for resizable panels */
+  .workspace-panel.is-positioned {
+    container-type: size;
+  }
+
+  .workspace-panel.is-positioned .todoapp h2 {
+    font-size: clamp(1.2rem, 5cqw, 2rem);
+  }
+
+  .workspace-panel.is-positioned .row input,
+  .workspace-panel.is-positioned .row button {
+    font-size: clamp(0.8rem, 3cqw, 1.1rem);
+    height: auto;
+    padding: 0.8em;
+  }
+
+  .workspace-panel.is-positioned .display {
+    font-size: clamp(1.5rem, 10cqw, 2.5rem);
+    height: auto;
+  }
+
+  .workspace-panel.is-positioned .buttons button {
+    font-size: clamp(0.9rem, 4cqw, 1.5rem);
+    padding: 0.5em;
+  }
+
+  .workspace-panel.is-positioned .watchstop2 .time {
+    font-size: clamp(2rem, 15cqw, 5rem);
+  }
+
+  .workspace-panel.is-positioned .controls button {
+    font-size: clamp(0.8rem, 3cqw, 1.2rem);
+    padding: 0.6em;
+    height: auto;
+  }
+
+
+
+
+  .workspace-panel.is-dragging {
+    cursor: grabbing;
+    z-index: 1000 !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .workspace-resize-handle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    cursor: nwse-resize;
+    z-index: 1001;
+    background: linear-gradient(135deg, transparent 50%, #3460f0 50%);
+    border-radius: 0 0 8px 0;
+    display: none;
+  }
+
+  @media (min-width: 701px) {
+    .workspace-panel.is-positioned .workspace-resize-handle {
+      display: block;
+    }
+  }
+
+  /* Specific fixes for panel contents when positioned */
+  .workspace-panel.is-positioned .clock {
+    display: flex;
+    font-size: 10%; /* Base for scaling if we used em/rem, but let's try scaling factors */
+  }
+
+  .workspace-panel.is-positioned .clock span {
+    font-size: min(10vw, 80px);
+    width: auto;
+    padding: 0 10px;
+  }
+
+  .workspace-panel.is-positioned textarea,
+  .workspace-panel.is-positioned .TextDoc {
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media (max-width: 700px) {
+    .NavBar {
+      height: 86px;
+      max-height: 86px;
+      padding: 8px 6px;
+    }
+
+    .gadget-picker {
+      top: 148px;
+      right: 10px;
+      width: calc(100vw - 20px);
+    }
+  }
