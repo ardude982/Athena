@@ -3,7 +3,7 @@
 > **A smarter way to learn, plan, and make the most out of your time.**
 
 <p align="center">
-  <img src="./assets/landing-page.png" alt="Athena Landing Page" width="900">
+  <img src="" alt="Athena Landing Page" width="900">
 </p>
 
 Athena is an educational productivity platform designed to help students
@@ -46,7 +46,7 @@ The Athena landing page introduces the platform and its purpose while
 providing quick access to the main features.
 
 <p align="center">
-  <img src="./assets/landing-page.png" alt="Athena Landing Page" width="900">
+  <img src="" alt="Athena Landing Page" width="900">
 </p>
 
 ---
@@ -57,7 +57,7 @@ The main workspace brings different productivity and study tools together
 in a single environment.
 
 <p align="center">
-  <img src="./assets/workspace.png" alt="Athena Student Workspace" width="900">
+  <img src="" alt="Athena Student Workspace" width="900">
 </p>
 
 ---
@@ -96,9 +96,9 @@ useful information without constantly switching between different apps.
 
 </p>
 
-![Athena Demo](./assets/demo.gif)
+![Athena Demo]()
 
-**[▶️ Watch the full demo](YOUR_VIDEO_LINK_HERE)**
+**[▶️ Watch the full demo]()**
 
 ---
 
