@@ -215,7 +215,7 @@ Analytics
 
 GitHub: @ardude982
 
-🇬🇧 English Version
+🇬🇧 **[English Version](./README.md)**
 
 <p align="center"> ساخته شده با ❤️ و کلی کنجکاوی </p> ```
 
