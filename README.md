@@ -217,8 +217,8 @@ Build it. Understand it. Improve it.
 If you're interested in Athena, software development, hardware, or
 technology, feel free to connect.
 
-GitHub: @YOUR_USERNAME
+GitHub: @ardude982
 
-🇮🇷 Read this README in Persian
+🇮🇷 [نسخه فارسی README](./README-fa.md)
 
 <p align="center"> Made with ❤️ and pasion </p> 
