@@ -99,7 +99,7 @@
 
 ![دموی آتنا](./assets/demo.gif)
 
-**[▶️ مشاهده ویدئوی کامل پروژه](YOUR_VIDEO_LINK_HERE)**
+**[▶️ مشاهده ویدئوی کامل پروژه](GitPics/showcasecid.mp4)**
 
 ---
 
