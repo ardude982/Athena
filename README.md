@@ -168,6 +168,7 @@ are continuously being added.
  More productivity tools
  Mobile optimization
  More educational features
+
 💡 Vision
 
 Athena is more than just a productivity application.
@@ -183,7 +184,7 @@ How can I improve?
 The project is also an opportunity to experiment with building a complete
 product — from UI/UX design and frontend development to backend systems,
 data, and future intelligent features.
-
+```
 👨‍💻 About Me
 Hi, I'm Arvin 👋
 
@@ -219,4 +220,4 @@ GitHub: @YOUR_USERNAME
 
 🇮🇷 Read this README in Persian
 
-<p align="center"> Made with ❤️ and pasion </p> ```
+<p align="center"> Made with ❤️ and pasion </p> 
