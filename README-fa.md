@@ -213,7 +213,7 @@ Analytics
 اگر به آتنا، توسعه نرم‌افزار، سخت‌افزار یا تکنولوژی علاقه‌مند هستید،
 خوشحال می‌شوم با شما در ارتباط باشم.
 
-GitHub: @YOUR_USERNAME
+GitHub: @ardude982
 
 🇬🇧 English Version
 
