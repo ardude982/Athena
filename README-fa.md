@@ -47,7 +47,7 @@
 به بخش‌های اصلی را فراهم می‌کند.
 
 <p align="center">
-  <img src="./assets/landing-page.png" alt="صفحه اصلی آتنا" width="900">
+  <img src="GitPics/FirstPage.png" alt="صفحه اصلی آتنا" width="900">
 </p>
 
 ---
@@ -58,7 +58,7 @@
 در اختیار کاربر قرار می‌گیرند.
 
 <p align="center">
-  <img src="./assets/workspace.png" alt="محیط کار آتنا" width="900">
+  <img src="GitPics/UserInterface.png" alt="محیط کار آتنا" width="900">
 </p>
 
 ---
